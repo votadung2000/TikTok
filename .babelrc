@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "@components": "./components",
+          "@constant": "./constant",
+          "@utils": "./utils",
+          "@views": "./views",
+          "@routes": "./screen/routes"
+        }
+      }
+    ]
+  ]
+}

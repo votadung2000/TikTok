@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components": [
+        "./components"
+      ],
+      "@constant": [
+        "./constant"
+      ],
+      "@utils": [
+        "./utils"
+      ],
+      "@views": [
+        "./views"
+      ],
+      "@routes": [
+        "./screen/routes"
+      ],
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
