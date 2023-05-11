@@ -9,10 +9,11 @@ import Video from 'react-native-video';
 
 import Info from './Info';
 import Actions from './Actions';
+import {colors} from '@constant';
 
 const {height} = Dimensions.get('window');
 
-const PostVideo = () => {
+const PostVideo = ({data}) => {
   const [isPause, setPause] = useState();
 
   const handlePause = () => {
@@ -29,7 +30,7 @@ const PostVideo = () => {
         <View>
           <Video
             source={{
-              uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+              uri: data?.videoUri,
             }}
             repeat={true}
             style={styles.video}
@@ -38,8 +39,8 @@ const PostVideo = () => {
             onError={onError}
           />
           <View style={styles.uiContainer}>
-            <Actions />
-            <Info />
+            <Actions {...data} />
+            <Info {...data} />
           </View>
         </View>
       </TouchableWithoutFeedback>
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
   container: {
     height,
     width: '100%',
+    backgroundColor: colors.black,
   },
   video: {
     position: 'absolute',
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
   uiContainer: {
     height: '100%',
     justifyContent: 'flex-end',
-    bottom: 20,
+    bottom: 30,
   },
 });
 

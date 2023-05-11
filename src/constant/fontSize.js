@@ -1,6 +1,4 @@
-import {resolutions} from '@utils';
-
-const {RFValue} = resolutions;
+import {RFValue} from '@utils/resolutions';
 
 const STANDARD_SCREEN_HEIGHT = 720;
 

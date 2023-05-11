@@ -14,7 +14,6 @@ const Layout = ({children}) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'red',
   },
 });
 
