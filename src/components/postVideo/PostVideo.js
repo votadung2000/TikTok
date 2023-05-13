@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   View,
@@ -13,8 +13,12 @@ import {colors} from '@constant';
 
 const {height} = Dimensions.get('window');
 
-const PostVideo = ({data}) => {
-  const [isPause, setPause] = useState();
+const PostVideo = ({isPlay, data}) => {
+  const [isPause, setPause] = useState(true);
+
+  useEffect(() => {
+    setPause(!isPlay);
+  }, [isPlay]);
 
   const handlePause = () => {
     setPause(!isPause);
@@ -37,6 +41,23 @@ const PostVideo = ({data}) => {
             // resizeMode='cover'
             paused={isPause}
             onError={onError}
+
+            // Turn off the future pause background
+            // rotate={90}
+            // playInBackground={false}
+            // playWhenInactive={false}
+
+            // Open video 360
+            // sphericalEnabled={true}
+
+            // Turn off the future for VR devices
+            // stereoPanorama={false}
+
+            // Disable features that come with 360 . video
+            // enableFullscreenButton={false}
+            // enableCardboardButton={false}
+            // enableTouchTracking={false}
+            // enableScrollTracking={false}
           />
           <View style={styles.uiContainer}>
             <Actions {...data} />
